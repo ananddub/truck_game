@@ -1,0 +1,175 @@
+[gd_scene format=3 uid="uid://cb0gv3hlt8y1w"]
+
+[ext_resource type="Texture2D" uid="uid://c5x6f5qs6geqm" path="res://assets/start/background.png" id="1_ewhw4"]
+[ext_resource type="Texture2D" uid="uid://bd32xl4pp27hk" path="res://assets/start/truck.png" id="2_3jeuj"]
+[ext_resource type="Texture2D" uid="uid://bbjrb116fkn60" path="res://assets/end/label.png" id="3_ewhw4"]
+[ext_resource type="Texture2D" uid="uid://cynfhatfipehq" path="res://assets/start/raju_bheem.png" id="4_f1ohi"]
+[ext_resource type="Texture2D" uid="uid://bhqgd5dedoao3" path="res://assets/start/jagu.png" id="5_7bip8"]
+[ext_resource type="Texture2D" uid="uid://cpgrmtwmodwk2" path="res://assets/start/home.png" id="6_ud0x7"]
+[ext_resource type="Texture2D" uid="uid://cl0frk07iinrm" path="res://assets/end/replay.png" id="7_2p8ug"]
+[ext_resource type="Script" uid="uid://16jjjlki875y" path="res://script/home/start_button.gd" id="8_hdvao"]
+[ext_resource type="Texture2D" uid="uid://dbt83h1q5c1pu" path="res://assets/start/fire_cracker_left.png" id="9_n6u0n"]
+[ext_resource type="Texture2D" uid="uid://dmwvpd44inyow" path="res://assets/start/fire_cracker_mid.png" id="10_mxca2"]
+[ext_resource type="Texture2D" uid="uid://dqk1anpdpptyc" path="res://assets/start/bottom_left.png" id="11_3jeuj"]
+[ext_resource type="Texture2D" uid="uid://0gj24y4hwsty" path="res://assets/start/fire_cracker_right.png" id="11_s8f6o"]
+[ext_resource type="Texture2D" uid="uid://iheuy4imakbh" path="res://assets/start/bottom_right.png" id="12_ewhw4"]
+
+[node name="End" type="Node2D" unique_id=1059388683]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1039471822]
+
+[node name="Background" type="TextureRect" parent="CanvasLayer" unique_id=791215353]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ewhw4")
+metadata/_edit_use_anchors_ = true
+
+[node name="truck" type="TextureRect" parent="CanvasLayer/Background" unique_id=1153039580]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -492.0
+offset_top = -314.0
+offset_right = 484.0
+offset_bottom = 255.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3jeuj")
+
+[node name="label" type="TextureRect" parent="CanvasLayer/Background/truck" unique_id=1478101868]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -364.0
+offset_top = -306.0
+offset_right = 439.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_ewhw4")
+
+[node name="raju_bheem" type="TextureRect" parent="CanvasLayer/Background" unique_id=1548361669]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -139.0
+offset_right = 431.0
+offset_bottom = 333.0
+grow_vertical = 2
+texture = ExtResource("4_f1ohi")
+
+[node name="jagu" type="TextureRect" parent="CanvasLayer/Background" unique_id=435051315]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -469.0
+offset_top = -172.0
+offset_right = 9.0
+offset_bottom = 339.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("5_7bip8")
+
+[node name="home" type="TextureButton" parent="CanvasLayer/Background" unique_id=961890400]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = 306.0
+offset_right = 3.0
+offset_bottom = 503.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_ud0x7")
+
+[node name="replay" type="TextureButton" parent="CanvasLayer/Background" unique_id=1840676636]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 65.0
+offset_top = 283.0
+offset_right = 364.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("7_2p8ug")
+script = ExtResource("8_hdvao")
+
+[node name="fire_left" type="TextureRect" parent="CanvasLayer/Background" unique_id=950034308]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 399.0
+offset_bottom = 555.0
+texture = ExtResource("9_n6u0n")
+
+[node name="fire_mid" type="TextureRect" parent="CanvasLayer/Background" unique_id=1641456310]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 196.0
+offset_top = 64.0
+offset_right = 356.0
+offset_bottom = 202.0
+grow_horizontal = 2
+texture = ExtResource("10_mxca2")
+
+[node name="fire_right" type="TextureRect" parent="CanvasLayer/Background" unique_id=1666058119]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -371.0
+offset_top = -284.0
+offset_right = 28.0
+offset_bottom = 285.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("11_s8f6o")
+
+[node name="grass_bottom_left" type="TextureRect" parent="CanvasLayer/Background" unique_id=748703317]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -197.0
+offset_right = 657.0
+grow_vertical = 0
+texture = ExtResource("11_3jeuj")
+
+[node name="grass_bottom_right" type="TextureRect" parent="CanvasLayer/Background" unique_id=102099113]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -618.0
+offset_top = -275.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("12_ewhw4")
+
+[connection signal="pressed" from="CanvasLayer/Background/replay" to="CanvasLayer/Background/replay" method="_on_pressed"]

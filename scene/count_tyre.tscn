@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://16q1oph2xgcr"]
+
+[ext_resource type="Texture2D" uid="uid://bcqc1mhesgsys" path="res://assets/count_tyre/background.png" id="1_yig7i"]
+[ext_resource type="Texture2D" uid="uid://smvqo3a2t4u8" path="res://assets/count_tyre/truck.png" id="2_3j8g1"]
+[ext_resource type="Texture2D" uid="uid://n5r27e3x6e1r" path="res://assets/count_tyre/chota_bheem_raju.png" id="3_rwsmc"]
+[ext_resource type="Texture2D" uid="uid://bywem7nhujlt8" path="res://assets/count_tyre/auncle.png" id="4_atdpi"]
+[ext_resource type="Texture2D" uid="uid://degv814v4xm6u" path="res://assets/count_tyre/title_bottom_left.png" id="5_2kdcv"]
+[ext_resource type="Texture2D" uid="uid://bfiti6k2bj3eb" path="res://assets/count_tyre/title_bottom_right.png" id="6_43u5p"]
+
+[node name="CountTyre" type="Node2D" unique_id=2111470532]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=348828915]
+
+[node name="Background" type="TextureRect" parent="CanvasLayer" unique_id=1758912327]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yig7i")
+
+[node name="truck" type="TextureRect" parent="CanvasLayer/Background" unique_id=2010472398]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -618.0
+offset_top = -368.0
+offset_right = 518.0
+offset_bottom = 241.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3j8g1")
+
+[node name="tyre" type="TextureRect" parent="CanvasLayer/Background" unique_id=464490529]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="number" type="TextureRect" parent="CanvasLayer/Background" unique_id=1501406414]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="chota_bheem_raju" type="TextureRect" parent="CanvasLayer/Background" unique_id=974005991]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -159.0
+offset_right = 337.0
+offset_bottom = 332.0
+grow_vertical = 2
+texture = ExtResource("3_rwsmc")
+
+[node name="auncle" type="TextureRect" parent="CanvasLayer/Background" unique_id=438252639]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -402.0
+offset_top = -238.0
+offset_right = -103.0
+offset_bottom = 292.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("4_atdpi")
+
+[node name="bottom_left" type="TextureRect" parent="CanvasLayer/Background" unique_id=191017013]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 301.0
+offset_top = -201.0
+offset_right = 641.0
+offset_bottom = -4.0
+grow_vertical = 0
+texture = ExtResource("5_2kdcv")
+
+[node name="bottom_right" type="TextureRect" parent="CanvasLayer/Background" unique_id=1556335240]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -379.0
+offset_top = -255.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("6_43u5p")
