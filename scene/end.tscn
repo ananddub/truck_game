@@ -15,8 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://iheuy4imakbh" path="res://assets/start/bottom_right.png" id="12_ewhw4"]
 [ext_resource type="Script" path="res://script/end/title.gd" id="13_title"]
 [ext_resource type="Script" path="res://script/end/home.gd" id="14_home"]
+[ext_resource type="Script" path="res://script/end/end_scene.gd" id="15_scene"]
 
 [node name="End" type="Node2D" unique_id=1059388683]
+script = ExtResource("15_scene")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1039471822]
 

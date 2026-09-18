@@ -17,8 +17,10 @@
 [ext_resource type="Texture2D" uid="uid://rs1svq00rkd1" path="res://assets/pick_truck/sound.png" id="12_gm3af"]
 [ext_resource type="Script" uid="uid://crc0cvb16oa7y" path="res://script/count_tyre/state.gd" id="13_2qpou"]
 [ext_resource type="Script" uid="uid://ogob1fgfafbl" path="res://script/global/obj_sound.gd" id="13_ftsrs"]
+[ext_resource type="Script" path="res://script/count_tyre/count_tyre_scene.gd" id="14_scene"]
 
 [node name="CountTyre" type="Node2D" unique_id=2111470532]
+script = ExtResource("14_scene")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=348828915]
 

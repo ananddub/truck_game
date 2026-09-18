@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://b11yse2jeid4b" path="res://script/pick_truck/home.gd" id="14_7dlnt"]
 [ext_resource type="Script" uid="uid://djsnf2u8bi2mq" path="res://script/stone_remove/game.gd" id="15_8hmpf"]
 [ext_resource type="Script" uid="uid://ogob1fgfafbl" path="res://script/global/obj_sound.gd" id="16_m1av7"]
+[ext_resource type="Script" path="res://script/stone_remove/stone_remove_scene.gd" id="17_scene"]
 
 [sub_resource type="Animation" id="Animation_hi4ra"]
 length = 0.001
@@ -286,6 +287,7 @@ _data = {
 }
 
 [node name="StoneRemove" type="Node2D" unique_id=1823566557]
+script = ExtResource("17_scene")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1831850500]
 

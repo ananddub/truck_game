@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dqk1anpdpptyc" path="res://assets/start/bottom_left.png" id="12_x8kdf"]
 [ext_resource type="Texture2D" uid="uid://iheuy4imakbh" path="res://assets/start/bottom_right.png" id="13_f2v2m"]
 [ext_resource type="Script" path="res://script/home/title.gd" id="14_title"]
+[ext_resource type="Script" path="res://script/home/home_scene.gd" id="15_main"]
 
 [sub_resource type="Animation" id="Animation_f2v2m"]
 length = 0.001
@@ -53,6 +54,7 @@ _data = {
 }
 
 [node name="main" type="Node2D" unique_id=202968251]
+script = ExtResource("15_main")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1740665283]
 

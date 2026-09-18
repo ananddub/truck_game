@@ -1,12 +1,16 @@
 extends Node
 
 var count: int = 0
+@onready var scene_root = $"../../.."
 
 func _ready() -> void:
 	Global.play(Global.SpeakType.TYRE_INTRO)
 
 func on_pressed() -> void:
 	count += 1
+	if scene_root != null and scene_root.has_method("on_tyre_counted"):
+		scene_root.on_tyre_counted(count)
+	
 	if count == 1:
 		Global.play(Global.SpeakType.TYRE_COUNT_1)
 	elif count == 2:

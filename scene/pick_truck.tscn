@@ -24,11 +24,13 @@
 [ext_resource type="Script" uid="uid://b7mds6h2qrigy" path="res://script/pick_truck/scoter.gd" id="18_v2dc8"]
 [ext_resource type="Script" uid="uid://c2ujeb88w751n" path="res://script/pick_truck/truck.gd" id="19_w2sul"]
 [ext_resource type="Script" uid="uid://dynnmrpcapyqr" path="res://script/pick_truck/car.gd" id="20_53qqv"]
+[ext_resource type="Script" path="res://script/pick_truck/pick_truck_scene.gd" id="21_pick_scene"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gvuh7"]
 load_path = "res://.godot/imported/unselected.png-55054f95533dc031f782b29ca1c2b4c0.ctex"
 
 [node name="PickTruck" type="Node2D" unique_id=417916990]
+script = ExtResource("21_pick_scene")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2019057016]
 
