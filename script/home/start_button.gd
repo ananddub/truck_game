@@ -5,8 +5,11 @@ var pressed_scale := Vector2(0.9, 0.9)
 
 func _ready() -> void:
 	scale = normal_scale
+	Global.play(Global.SpeakType.HOME_WELCOME)
 
 func _on_pressed() -> void:
+	disabled = true
+	await Global.play_and_wait(Global.SpeakType.HOME_PLAY_CLICK, 0.3)
 	get_tree().change_scene_to_file("res://scene/pick_truck.tscn")
 
 func _on_button_down() -> void:

@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bhqgd5dedoao3" path="res://assets/start/jagu.png" id="5_7bip8"]
 [ext_resource type="Texture2D" uid="uid://cpgrmtwmodwk2" path="res://assets/start/home.png" id="6_ud0x7"]
 [ext_resource type="Texture2D" uid="uid://cl0frk07iinrm" path="res://assets/end/replay.png" id="7_2p8ug"]
-[ext_resource type="Script" uid="uid://16jjjlki875y" path="res://script/home/start_button.gd" id="8_hdvao"]
+[ext_resource type="Script" uid="uid://i3asesn3itpf" path="res://script/end/replay.gd" id="8_ewhw4"]
 [ext_resource type="Texture2D" uid="uid://dbt83h1q5c1pu" path="res://assets/start/fire_cracker_left.png" id="9_n6u0n"]
 [ext_resource type="Texture2D" uid="uid://dmwvpd44inyow" path="res://assets/start/fire_cracker_mid.png" id="10_mxca2"]
 [ext_resource type="Texture2D" uid="uid://dqk1anpdpptyc" path="res://assets/start/bottom_left.png" id="11_3jeuj"]
@@ -113,7 +113,7 @@ offset_bottom = 500.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("7_2p8ug")
-script = ExtResource("8_hdvao")
+script = ExtResource("8_ewhw4")
 
 [node name="fire_left" type="TextureRect" parent="CanvasLayer/Background" unique_id=950034308]
 layout_mode = 0

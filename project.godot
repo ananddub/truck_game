@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="truck_game"
-run/main_scene="res://scene/home.tscn"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+run/main_scene="uid://bq8wb41u21cgp"
+config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*uid://d1ix1kplm68x0"
 
 [display]
 
@@ -31,3 +35,4 @@ window/stretch/aspect="expand"
 
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

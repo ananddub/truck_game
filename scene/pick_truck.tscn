@@ -9,14 +9,21 @@
 [ext_resource type="Texture2D" uid="uid://b5hqqkyw11lyt" path="res://assets/pick_truck/left_bottom.png" id="7_dn7sc"]
 [ext_resource type="Texture2D" uid="uid://7sykvv0pqtvl" path="res://assets/pick_truck/home.png" id="8_v2dc8"]
 [ext_resource type="Texture2D" uid="uid://rs1svq00rkd1" path="res://assets/pick_truck/sound.png" id="9_53qqv"]
+[ext_resource type="Script" uid="uid://b11yse2jeid4b" path="res://script/pick_truck/home.gd" id="9_rwi1i"]
 [ext_resource type="Texture2D" uid="uid://cj570d4wmklqx" path="res://assets/pick_truck/label.png" id="10_jb87i"]
 [ext_resource type="Texture2D" uid="uid://bn7w3adkkfg67" path="res://assets/pick_truck/label_text.png" id="11_6xdq6"]
+[ext_resource type="Script" uid="uid://ogob1fgfafbl" path="res://script/global/obj_sound.gd" id="11_vd3ej"]
 [ext_resource type="Texture2D" uid="uid://bhwqf2iu6l721" path="res://assets/pick_truck/unselected.png" id="12_pb85c"]
 [ext_resource type="Texture2D" uid="uid://rheoc4rayan6" path="res://assets/pick_truck/selected.png" id="13_07vtt"]
 [ext_resource type="Texture2D" uid="uid://b2r4nacqrmmjd" path="res://assets/pick_truck/cycle.png" id="14_kwkep"]
+[ext_resource type="Script" uid="uid://c2ljnbkc75h01" path="res://script/pick_truck/cycle.gd" id="14_r1fe1"]
+[ext_resource type="Texture2D" uid="uid://dtn5jmsc2jirq" path="res://assets/pick_truck/false_select.png" id="15_eqrb7"]
 [ext_resource type="Texture2D" uid="uid://gwj6dqtb16a" path="res://assets/pick_truck/scooter.png" id="15_nhgqw"]
 [ext_resource type="Texture2D" uid="uid://dcqaiq24u8jqx" path="res://assets/pick_truck/car.png" id="16_lg882"]
 [ext_resource type="Texture2D" uid="uid://dlxfyjo8vvvqb" path="res://assets/pick_truck/truck.png" id="17_qei18"]
+[ext_resource type="Script" uid="uid://b7mds6h2qrigy" path="res://script/pick_truck/scoter.gd" id="18_v2dc8"]
+[ext_resource type="Script" uid="uid://c2ujeb88w751n" path="res://script/pick_truck/truck.gd" id="19_w2sul"]
+[ext_resource type="Script" uid="uid://dynnmrpcapyqr" path="res://script/pick_truck/car.gd" id="20_53qqv"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gvuh7"]
 load_path = "res://.godot/imported/unselected.png-55054f95533dc031f782b29ca1c2b4c0.ctex"
@@ -109,6 +116,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("8_v2dc8")
+script = ExtResource("9_rwi1i")
 
 [node name="sound" type="TextureButton" parent="CanvasLayer/background" unique_id=825993016]
 layout_mode = 1
@@ -119,6 +127,7 @@ offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
 texture_normal = ExtResource("9_53qqv")
+script = ExtResource("11_vd3ej")
 
 [node name="label" type="TextureRect" parent="CanvasLayer/background" unique_id=1044623845]
 layout_mode = 1
@@ -158,7 +167,8 @@ offset_right = 371.0
 offset_bottom = 130.0
 grow_vertical = 2
 texture_normal = ExtResource("12_pb85c")
-texture_pressed = ExtResource("13_07vtt")
+texture_pressed = ExtResource("15_eqrb7")
+script = ExtResource("14_r1fe1")
 
 [node name="cycle" type="TextureRect" parent="CanvasLayer/background/label/cycle" unique_id=1647540262]
 layout_mode = 1
@@ -189,7 +199,8 @@ offset_bottom = -28.0
 grow_horizontal = 2
 grow_vertical = 0
 texture_normal = SubResource("CompressedTexture2D_gvuh7")
-texture_pressed = ExtResource("13_07vtt")
+texture_pressed = ExtResource("15_eqrb7")
+script = ExtResource("18_v2dc8")
 
 [node name="scooter" type="TextureRect" parent="CanvasLayer/background/label/scoter" unique_id=254065744]
 layout_mode = 1
@@ -220,7 +231,8 @@ offset_bottom = 130.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = SubResource("CompressedTexture2D_gvuh7")
-texture_pressed = ExtResource("13_07vtt")
+texture_pressed = ExtResource("15_eqrb7")
+script = ExtResource("20_53qqv")
 
 [node name="car" type="TextureRect" parent="CanvasLayer/background/label/car" unique_id=1008189575]
 layout_mode = 1
@@ -252,7 +264,9 @@ grow_horizontal = 0
 grow_vertical = 2
 texture_normal = SubResource("CompressedTexture2D_gvuh7")
 texture_pressed = ExtResource("13_07vtt")
+texture_disabled = ExtResource("13_07vtt")
 stretch_mode = 0
+script = ExtResource("19_w2sul")
 
 [node name="truck" type="TextureRect" parent="CanvasLayer/background/label/truck" unique_id=840174495]
 layout_mode = 1
@@ -269,3 +283,15 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("17_qei18")
 expand_mode = 1
+
+[connection signal="button_down" from="CanvasLayer/background/home" to="CanvasLayer/background/home" method="_on_button_down"]
+[connection signal="button_up" from="CanvasLayer/background/home" to="CanvasLayer/background/home" method="_on_button_up"]
+[connection signal="pressed" from="CanvasLayer/background/home" to="CanvasLayer/background/home" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/background/sound" to="CanvasLayer/background/sound" method="_on_pressed"]
+[connection signal="button_down" from="CanvasLayer/background/label/cycle" to="CanvasLayer/background/label/cycle" method="_on_button_down"]
+[connection signal="button_up" from="CanvasLayer/background/label/cycle" to="CanvasLayer/background/label/cycle" method="_on_button_up"]
+[connection signal="button_down" from="CanvasLayer/background/label/scoter" to="CanvasLayer/background/label/scoter" method="_on_button_down"]
+[connection signal="button_up" from="CanvasLayer/background/label/scoter" to="CanvasLayer/background/label/scoter" method="_on_button_up"]
+[connection signal="button_down" from="CanvasLayer/background/label/car" to="CanvasLayer/background/label/car" method="_on_button_down"]
+[connection signal="button_up" from="CanvasLayer/background/label/car" to="CanvasLayer/background/label/car" method="_on_button_up"]
+[connection signal="pressed" from="CanvasLayer/background/label/truck" to="CanvasLayer/background/label/truck" method="_on_pressed"]
