@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://dqk1anpdpptyc" path="res://assets/start/bottom_left.png" id="11_3jeuj"]
 [ext_resource type="Texture2D" uid="uid://0gj24y4hwsty" path="res://assets/start/fire_cracker_right.png" id="11_s8f6o"]
 [ext_resource type="Texture2D" uid="uid://iheuy4imakbh" path="res://assets/start/bottom_right.png" id="12_ewhw4"]
+[ext_resource type="Script" path="res://script/end/title.gd" id="13_title"]
+[ext_resource type="Script" path="res://script/end/home.gd" id="14_home"]
 
 [node name="End" type="Node2D" unique_id=1059388683]
 
@@ -56,6 +58,7 @@ offset_bottom = 67.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("3_ewhw4")
+script = ExtResource("13_title")
 
 [node name="raju_bheem" type="TextureRect" parent="CanvasLayer/Background" unique_id=1548361669]
 layout_mode = 1
@@ -98,6 +101,7 @@ offset_bottom = 503.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("6_ud0x7")
+script = ExtResource("14_home")
 
 [node name="replay" type="TextureButton" parent="CanvasLayer/Background" unique_id=1840676636]
 layout_mode = 1
@@ -172,4 +176,9 @@ grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("12_ewhw4")
 
+[connection signal="button_down" from="CanvasLayer/Background/home" to="CanvasLayer/Background/home" method="_on_button_down"]
+[connection signal="button_up" from="CanvasLayer/Background/home" to="CanvasLayer/Background/home" method="_on_button_up"]
+[connection signal="pressed" from="CanvasLayer/Background/home" to="CanvasLayer/Background/home" method="_on_pressed"]
+[connection signal="button_down" from="CanvasLayer/Background/replay" to="CanvasLayer/Background/replay" method="_on_button_down"]
+[connection signal="button_up" from="CanvasLayer/Background/replay" to="CanvasLayer/Background/replay" method="_on_button_up"]
 [connection signal="pressed" from="CanvasLayer/Background/replay" to="CanvasLayer/Background/replay" method="_on_pressed"]

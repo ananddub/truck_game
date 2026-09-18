@@ -7,15 +7,12 @@ var idle_tween: Tween
 func _ready() -> void:
 	pivot_offset = size / 2.0
 	scale = Vector2.ZERO
-	rotation_degrees = 2.0
-	Global.play(Global.SpeakType.END_CELEBRATION)
 	
 	# Entrance animation: animated ho kar aaye
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(0.3).timeout
 	var enter_tween := create_tween()
 	enter_tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	enter_tween.tween_property(self, "scale", normal_scale, 0.6)
-	enter_tween.parallel().tween_property(self, "rotation_degrees", 0.0, 0.6)
 	await enter_tween.finished
 	
 	start_idle_animation()
@@ -23,16 +20,16 @@ func _ready() -> void:
 func start_idle_animation() -> void:
 	idle_tween = create_tween().set_loops()
 	idle_tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	idle_tween.tween_property(self, "scale", Vector2(1.08, 1.08), 0.75)
-	idle_tween.parallel().tween_property(self, "rotation_degrees", 2.0, 0.75)
-	idle_tween.tween_property(self, "scale", Vector2(0.96, 0.96), 0.75)
-	idle_tween.parallel().tween_property(self, "rotation_degrees", -2.0, 0.75)
+	idle_tween.tween_property(self, "scale", Vector2(1.05, 1.05), 1.0)
+	idle_tween.parallel().tween_property(self, "rotation_degrees", -2.0, 1.0)
+	idle_tween.tween_property(self, "scale", Vector2(0.96, 0.96), 1.0)
+	idle_tween.parallel().tween_property(self, "rotation_degrees", 2.0, 1.0)
 
 func _on_pressed() -> void:
 	disabled = true
 	if idle_tween != null:
 		idle_tween.kill()
-	await Global.play_and_wait(Global.SpeakType.END_REPLAY_CLICK, 0.4)
+	await Global.play_and_wait(Global.SpeakType.END_HOME_CLICK, 0.3)
 	get_tree().change_scene_to_file("res://scene/home.tscn")
 
 func _on_button_down() -> void:

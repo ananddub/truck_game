@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://0gj24y4hwsty" path="res://assets/start/fire_cracker_right.png" id="10_wi4e0"]
 [ext_resource type="Texture2D" uid="uid://dqk1anpdpptyc" path="res://assets/start/bottom_left.png" id="12_x8kdf"]
 [ext_resource type="Texture2D" uid="uid://iheuy4imakbh" path="res://assets/start/bottom_right.png" id="13_f2v2m"]
+[ext_resource type="Script" path="res://script/home/title.gd" id="14_title"]
 
 [sub_resource type="Animation" id="Animation_f2v2m"]
 length = 0.001
@@ -96,6 +97,7 @@ offset_bottom = -208.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("3_sufg3")
+script = ExtResource("14_title")
 
 [node name="raju_bheem" type="TextureRect" parent="CanvasLayer/Background" unique_id=254477344]
 layout_mode = 1
