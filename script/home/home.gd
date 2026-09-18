@@ -26,7 +26,11 @@ func start_idle_animation() -> void:
 	idle_tween.parallel().tween_property(self, "rotation_degrees", 2.0, 1.0)
 
 func _on_pressed() -> void:
-	print("home btn pressed")
+	disabled = true
+	if idle_tween != null:
+		idle_tween.kill()
+	await get_tree().create_timer(0.15).timeout
+	get_tree().quit()
 
 func _on_button_down() -> void:
 	if idle_tween != null:
