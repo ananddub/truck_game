@@ -1,5 +1,9 @@
 extends Node
 
+signal sound_toggled(is_sound_on: bool)
+
+const SETTINGS_FILE = "user://settings.cfg"
+
 var sound: bool = true
 var audio_player: AudioStreamPlayer
 
@@ -60,14 +64,40 @@ const SOUNDS = {
 }
 
 func _ready() -> void:
+	load_settings()
 	audio_player = AudioStreamPlayer.new()
 	audio_player.bus = "Master"
 	add_child(audio_player)
+	apply_sound_state()
 
-func toogle() -> void:
-	sound = !sound
+func load_settings() -> void:
+	var config = ConfigFile.new()
+	var err = config.load(SETTINGS_FILE)
+	if err == OK:
+		sound = config.get_value("audio", "sound", true)
+	else:
+		sound = true
+
+func save_settings() -> void:
+	var config = ConfigFile.new()
+	config.set_value("audio", "sound", sound)
+	config.save(SETTINGS_FILE)
+
+func set_sound(is_on: bool) -> void:
+	sound = is_on
+	save_settings()
+	apply_sound_state()
+	sound_toggled.emit(sound)
+
+func apply_sound_state() -> void:
+	var master_bus = AudioServer.get_bus_index("Master")
+	if master_bus >= 0:
+		AudioServer.set_bus_mute(master_bus, !sound)
 	if !sound and audio_player != null and audio_player.playing:
 		audio_player.stop()
+
+func toogle() -> void:
+	set_sound(!sound)
 
 func toggle() -> void:
 	toogle()
@@ -82,6 +112,7 @@ func play(type: SpeakType) -> void:
 	if SOUNDS.has(type):
 		if audio_player == null:
 			audio_player = AudioStreamPlayer.new()
+			audio_player.bus = "Master"
 			add_child(audio_player)
 		audio_player.stop()
 		audio_player.stream = SOUNDS[type]
@@ -94,6 +125,8 @@ func wait_for_speech() -> void:
 		await audio_player.finished
 
 func play_and_wait(type: SpeakType, extra_delay: float = 0.3) -> void:
+	if !sound:
+		return
 	play(type)
 	await wait_for_speech()
 	if extra_delay > 0:

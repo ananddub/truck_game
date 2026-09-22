@@ -10,14 +10,15 @@
 [ext_resource type="Script" uid="uid://dovlsuivbdw2a" path="res://script/count_tyre/1.gd" id="8_0jam6"]
 [ext_resource type="Texture2D" uid="uid://ksbtbdwp77o3" path="res://assets/count_tyre/board.png" id="9_43u5p"]
 [ext_resource type="Script" uid="uid://d00kr0ah26dhy" path="res://script/count_tyre/2.gd" id="9_wjln7"]
-[ext_resource type="Texture2D" uid="uid://7sykvv0pqtvl" path="res://assets/pick_truck/home.png" id="10_2qpou"]
+[ext_resource type="Texture2D" uid="uid://7sykvv0pqtvl" path="res://assets/common/home.png" id="10_2qpou"]
 [ext_resource type="Script" uid="uid://i3njybrmtmmb" path="res://script/count_tyre/3.gd" id="10_dl280"]
 [ext_resource type="Script" uid="uid://b2ol1hxunptti" path="res://script/count_tyre/4.gd" id="11_0mqdh"]
 [ext_resource type="Script" uid="uid://b11yse2jeid4b" path="res://script/pick_truck/home.gd" id="11_ax1yi"]
-[ext_resource type="Texture2D" uid="uid://rs1svq00rkd1" path="res://assets/pick_truck/sound.png" id="12_gm3af"]
 [ext_resource type="Script" uid="uid://crc0cvb16oa7y" path="res://script/count_tyre/state.gd" id="13_2qpou"]
 [ext_resource type="Script" uid="uid://ogob1fgfafbl" path="res://script/global/obj_sound.gd" id="13_ftsrs"]
-[ext_resource type="Script" path="res://script/count_tyre/count_tyre_scene.gd" id="14_scene"]
+[ext_resource type="Script" uid="uid://c34u6vnirfq15" path="res://script/count_tyre/count_tyre_scene.gd" id="14_scene"]
+[ext_resource type="Texture2D" uid="uid://by0o5alh6ebjp" path="res://assets/common/volumeon.png" id="16_dl280"]
+[ext_resource type="Texture2D" uid="uid://bba10xnsusc6c" path="res://assets/common/vaolumeoff.png" id="17_dl280"]
 
 [node name="CountTyre" type="Node2D" unique_id=2111470532]
 script = ExtResource("14_scene")
@@ -172,8 +173,10 @@ texture = ExtResource("9_43u5p")
 
 [node name="home" type="TextureButton" parent="CanvasLayer/Background" unique_id=1632017024]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 20.0
+offset_top = 60.0
+offset_right = 160.0
+offset_bottom = 198.0
 texture_normal = ExtResource("10_2qpou")
 script = ExtResource("11_ax1yi")
 
@@ -182,10 +185,16 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
+offset_left = -175.0
+offset_top = 54.0
+offset_right = -34.0
+offset_bottom = 185.0
 grow_horizontal = 0
-texture_normal = ExtResource("12_gm3af")
+toggle_mode = true
+texture_normal = ExtResource("16_dl280")
+texture_pressed = ExtResource("17_dl280")
+ignore_texture_size = true
+stretch_mode = 0
 script = ExtResource("13_ftsrs")
 
 [node name="Node" type="Node" parent="CanvasLayer/Background" unique_id=91532865]

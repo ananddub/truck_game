@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rs1svq00rkd1"
-path="res://.godot/imported/sound.png-75932979cda8f31053d0c88eca0cda1d.ctex"
+uid="uid://bba10xnsusc6c"
+path="res://.godot/imported/vaolumeoff.png-7bc187eed8c37fdc191db8ef532a4784.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pick_truck/sound.png"
-dest_files=["res://.godot/imported/sound.png-75932979cda8f31053d0c88eca0cda1d.ctex"]
+source_file="res://assets/common/vaolumeoff.png"
+dest_files=["res://.godot/imported/vaolumeoff.png-7bc187eed8c37fdc191db8ef532a4784.ctex"]
 
 [params]
 

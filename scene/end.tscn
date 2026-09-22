@@ -13,9 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://dqk1anpdpptyc" path="res://assets/start/bottom_left.png" id="11_3jeuj"]
 [ext_resource type="Texture2D" uid="uid://0gj24y4hwsty" path="res://assets/start/fire_cracker_right.png" id="11_s8f6o"]
 [ext_resource type="Texture2D" uid="uid://iheuy4imakbh" path="res://assets/start/bottom_right.png" id="12_ewhw4"]
-[ext_resource type="Script" path="res://script/end/title.gd" id="13_title"]
-[ext_resource type="Script" path="res://script/end/home.gd" id="14_home"]
-[ext_resource type="Script" path="res://script/end/end_scene.gd" id="15_scene"]
+[ext_resource type="Script" uid="uid://bgungdlnr74m5" path="res://script/end/title.gd" id="13_title"]
+[ext_resource type="Script" uid="uid://8ifoymqabklw" path="res://script/end/home.gd" id="14_home"]
+[ext_resource type="Script" uid="uid://6pw8017qevkt" path="res://script/end/end_scene.gd" id="15_scene"]
+[ext_resource type="Texture2D" uid="uid://by0o5alh6ebjp" path="res://assets/common/volumeon.png" id="17_n6u0n"]
+[ext_resource type="Texture2D" uid="uid://bba10xnsusc6c" path="res://assets/common/vaolumeoff.png" id="18_mxca2"]
+[ext_resource type="Script" uid="uid://ogob1fgfafbl" path="res://script/global/obj_sound.gd" id="19_s8f6o"]
 
 [node name="End" type="Node2D" unique_id=1059388683]
 script = ExtResource("15_scene")
@@ -178,9 +181,27 @@ grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("12_ewhw4")
 
+[node name="sound" type="TextureButton" parent="CanvasLayer/Background" unique_id=425808991]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -163.0
+offset_top = 58.0
+offset_right = -39.0
+offset_bottom = 184.0
+grow_horizontal = 0
+toggle_mode = true
+texture_normal = ExtResource("17_n6u0n")
+texture_pressed = ExtResource("18_mxca2")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("19_s8f6o")
+
 [connection signal="button_down" from="CanvasLayer/Background/home" to="CanvasLayer/Background/home" method="_on_button_down"]
 [connection signal="button_up" from="CanvasLayer/Background/home" to="CanvasLayer/Background/home" method="_on_button_up"]
 [connection signal="pressed" from="CanvasLayer/Background/home" to="CanvasLayer/Background/home" method="_on_pressed"]
 [connection signal="button_down" from="CanvasLayer/Background/replay" to="CanvasLayer/Background/replay" method="_on_button_down"]
 [connection signal="button_up" from="CanvasLayer/Background/replay" to="CanvasLayer/Background/replay" method="_on_button_up"]
 [connection signal="pressed" from="CanvasLayer/Background/replay" to="CanvasLayer/Background/replay" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Background/sound" to="CanvasLayer/Background/sound" method="_on_pressed"]

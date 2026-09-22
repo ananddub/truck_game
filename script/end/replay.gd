@@ -32,8 +32,8 @@ func _on_pressed() -> void:
 	disabled = true
 	if idle_tween != null:
 		idle_tween.kill()
-	await Global.play_and_wait(Global.SpeakType.END_REPLAY_CLICK, 0.4)
-	get_tree().change_scene_to_file("res://scene/home.tscn")
+	#await Global.play_and_wait(Global.SpeakType.END_REPLAY_CLICK, 0.4)
+	get_tree().change_scene_to_file("res://scene/pick_truck.tscn")
 
 func _on_button_down() -> void:
 	if idle_tween != null:
