@@ -8,6 +8,7 @@ func _ready() -> void:
 
 func _on_button_down() -> void:
 	Global.play(Global.SpeakType.PICK_WRONG_CAR)
+	Progress.note_wrong_pick()
 	shake_wrong()
 	for child in get_children():
 		if child is Control:

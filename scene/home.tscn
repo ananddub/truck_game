@@ -13,8 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://dqk1anpdpptyc" path="res://assets/start/bottom_left.png" id="12_x8kdf"]
 [ext_resource type="Texture2D" uid="uid://iheuy4imakbh" path="res://assets/start/bottom_right.png" id="13_f2v2m"]
 [ext_resource type="Script" uid="uid://wffsumlsctji" path="res://script/home/title.gd" id="14_title"]
-[ext_resource type="Texture2D" uid="uid://d3neansep2tb3" path="res://assets/common/cross.png" id="15_hauk8"]
 [ext_resource type="Script" uid="uid://dfii2ybwhisuf" path="res://script/home/home_scene.gd" id="15_main"]
+[ext_resource type="Texture2D" uid="uid://d3neansep2tb3" path="res://assets/common/cross.png" id="15_wi4e0"]
 [ext_resource type="Texture2D" uid="uid://by0o5alh6ebjp" path="res://assets/common/volumeon.png" id="16_hauk8"]
 [ext_resource type="Script" uid="uid://beudoq0fub44w" path="res://script/home/cross.gd" id="16_wi4e0"]
 [ext_resource type="Texture2D" uid="uid://bba10xnsusc6c" path="res://assets/common/vaolumeoff.png" id="17_wi4e0"]
@@ -211,7 +211,7 @@ offset_left = 43.0
 offset_top = 51.0
 offset_right = 176.0
 offset_bottom = 181.0
-texture_normal = ExtResource("15_hauk8")
+texture_normal = ExtResource("15_wi4e0")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("16_wi4e0")

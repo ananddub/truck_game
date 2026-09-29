@@ -1,0 +1,21 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/common/next.png" id="1_next"]
+[ext_resource type="Script" path="res://script/common/next_button.gd" id="2_next_script"]
+
+[node name="NextButton" type="TextureButton"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1660.0
+offset_top = 910.0
+offset_right = 1860.0
+offset_bottom = 1035.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("1_next")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("2_next_script")

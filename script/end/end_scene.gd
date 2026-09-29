@@ -8,6 +8,10 @@ extends Node2D
 @onready var fire_right: TextureRect = $CanvasLayer/Background/fire_right
 
 func _ready() -> void:
+	# Reaching the end scene means the full run was completed — report it once
+	# to the host app (no-op outside Android) before the celebration starts.
+	Progress.submit_result()
+	Confetti.burst()
 	animate_celebration_characters()
 	animate_fireworks_celebration()
 

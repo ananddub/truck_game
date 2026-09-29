@@ -1,11 +1,20 @@
 extends TextureButton
 
+var normal_scale := Vector2.ONE
+var pressed_scale := Vector2(0.9, 0.9)
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass 
-
-
+	scale = normal_scale
 
 func _on_pressed() -> void:
-	get_tree().quit()
+	PausePopup.show_pause("home")
+
+func _on_button_down() -> void:
+	var tween := create_tween()
+	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "scale", pressed_scale, 0.09)
+
+func _on_button_up() -> void:
+	var tween := create_tween()
+	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "scale", normal_scale, 0.1)

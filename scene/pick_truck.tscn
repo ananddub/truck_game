@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b5b7fafkuy4bp" path="res://assets/pick_truck/toy.png" id="5_vd3ej"]
 [ext_resource type="Texture2D" uid="uid://chpuy85dtb2h7" path="res://assets/pick_truck/poster.png" id="6_eqrb7"]
 [ext_resource type="Texture2D" uid="uid://b5hqqkyw11lyt" path="res://assets/pick_truck/left_bottom.png" id="7_dn7sc"]
-[ext_resource type="Texture2D" uid="uid://7sykvv0pqtvl" path="res://assets/common/home.png" id="8_v2dc8"]
+[ext_resource type="Texture2D" uid="uid://lnff8dgsgkk6" path="res://assets/common/back.png" id="9_jb87i"]
 [ext_resource type="Script" uid="uid://b11yse2jeid4b" path="res://script/pick_truck/home.gd" id="9_rwi1i"]
 [ext_resource type="Texture2D" uid="uid://cj570d4wmklqx" path="res://assets/pick_truck/label.png" id="10_jb87i"]
 [ext_resource type="Texture2D" uid="uid://bn7w3adkkfg67" path="res://assets/pick_truck/label_text.png" id="11_6xdq6"]
@@ -120,7 +120,9 @@ offset_left = 44.0
 offset_top = 37.0
 offset_right = 184.0
 offset_bottom = 175.0
-texture_normal = ExtResource("8_v2dc8")
+texture_normal = ExtResource("9_jb87i")
+ignore_texture_size = true
+stretch_mode = 0
 script = ExtResource("9_rwi1i")
 
 [node name="sound" type="TextureButton" parent="CanvasLayer/background" unique_id=825993016]

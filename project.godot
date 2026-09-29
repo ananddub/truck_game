@@ -18,6 +18,10 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*uid://d1ix1kplm68x0"
+Bheem="*res://script/global/bheem.gd"
+Progress="*res://script/global/progress.gd"
+Confetti="*res://script/global/confetti.gd"
+PausePopup="*res://scene/pause_popup.tscn"
 
 [display]
 

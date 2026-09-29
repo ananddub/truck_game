@@ -33,6 +33,7 @@ func _on_pressed() -> void:
 	if idle_tween != null:
 		idle_tween.kill()
 	#await Global.play_and_wait(Global.SpeakType.HOME_PLAY_CLICK, 0.3)
+	Progress.start_run()
 	get_tree().change_scene_to_file("res://scene/pick_truck.tscn")
 
 func _on_button_down() -> void:

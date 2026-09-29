@@ -13,5 +13,16 @@ func _on_pressed() -> void:
 	t.tween_property(self, "scale", Vector2(1.15, 1.15), 0.4)
 	t.tween_property(self, "modulate", Color(1.2, 1.2, 0.9), 0.3)
 	
+	Confetti.burst()
 	await Global.play_and_wait(Global.SpeakType.PICK_CORRECT_TRUCK, 0.4)
-	get_tree().change_scene_to_file("res://scene/stone_remove.tscn")
+	
+	# Show NEXT button — do not auto-advance!
+	var canvas = get_tree().current_scene.get_node_or_null("CanvasLayer")
+	if canvas != null:
+		var next_btn = preload("res://scene/next_button.tscn").instantiate()
+		canvas.add_child(next_btn)
+		next_btn.next_clicked.connect(func():
+			get_tree().change_scene_to_file("res://scene/stone_remove.tscn")
+		)
+	else:
+		get_tree().change_scene_to_file("res://scene/stone_remove.tscn")
