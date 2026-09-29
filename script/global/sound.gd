@@ -6,6 +6,8 @@ const SETTINGS_FILE = "user://settings.cfg"
 
 var sound: bool = true
 var audio_player: AudioStreamPlayer
+var bgm_player: AudioStreamPlayer
+const BGM_STREAM = preload("res://assets/sounds/bgm.mp3")
 
 enum SpeakType {
 	HOME_WELCOME,
@@ -66,8 +68,21 @@ const SOUNDS = {
 func _ready() -> void:
 	load_settings()
 	audio_player = AudioStreamPlayer.new()
+	audio_player.name = "AudioPlayer"
 	audio_player.bus = "Master"
 	add_child(audio_player)
+
+	bgm_player = AudioStreamPlayer.new()
+	bgm_player.name = "BgmPlayer"
+	bgm_player.bus = "Master"
+	bgm_player.volume_db = -12.0
+	bgm_player.stream = BGM_STREAM
+	add_child(bgm_player)
+	bgm_player.finished.connect(func():
+		if sound and bgm_player != null:
+			bgm_player.play()
+	)
+
 	apply_sound_state()
 
 func load_settings() -> void:
@@ -90,11 +105,14 @@ func set_sound(is_on: bool) -> void:
 	sound_toggled.emit(sound)
 
 func apply_sound_state() -> void:
-	var master_bus = AudioServer.get_bus_index("Master")
-	if master_bus >= 0:
-		AudioServer.set_bus_mute(master_bus, !sound)
-	if !sound and audio_player != null and audio_player.playing:
-		audio_player.stop()
+	# Only BGM is toggled by the volume button!
+	# Narration and gameplay SFX continue playing.
+	if bgm_player != null:
+		if sound:
+			if not bgm_player.playing:
+				bgm_player.play()
+		else:
+			bgm_player.stop()
 
 func toogle() -> void:
 	set_sound(!sound)
@@ -107,11 +125,11 @@ func stop() -> void:
 		audio_player.stop()
 
 func play(type: SpeakType) -> void:
-	if !sound:
-		return
+	# Narration/TTS always plays
 	if SOUNDS.has(type):
 		if audio_player == null:
 			audio_player = AudioStreamPlayer.new()
+			audio_player.name = "AudioPlayer"
 			audio_player.bus = "Master"
 			add_child(audio_player)
 		audio_player.stop()
@@ -119,14 +137,12 @@ func play(type: SpeakType) -> void:
 		audio_player.play()
 
 func wait_for_speech() -> void:
-	if !sound or audio_player == null:
+	if audio_player == null:
 		return
 	if audio_player.playing:
 		await audio_player.finished
 
 func play_and_wait(type: SpeakType, extra_delay: float = 0.3) -> void:
-	if !sound:
-		return
 	play(type)
 	await wait_for_speech()
 	if extra_delay > 0:
